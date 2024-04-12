@@ -31,20 +31,6 @@ def fetch_webpage_content(url):
         print(f"Error fetching webpage content for {url}: {e}")
         return None
 
-def fetch_webpage_content(url):
-    try:
-        headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3',
-            'Accept-Language': 'en-US,en;q=0.9',
-            'Referer': 'https://www.google.com/'  # Add a referer to mimic a browser request
-        }
-        response = requests.get(url, headers=headers)
-        response.raise_for_status()
-        return response.content.decode('utf-8')
-    except (requests.exceptions.RequestException, urllib3.exceptions.HTTPError, urllib3.exceptions.LocationParseError) as e:
-        print(f"Error fetching webpage content for {url}: {e}")
-        return None
-
 
 # Rest of the code remains the same
 
